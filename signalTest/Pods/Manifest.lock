@@ -1,0 +1,55 @@
+PODS:
+  - CocoaAsyncSocket (7.6.3)
+  - CocoaLumberjack (3.4.2):
+    - CocoaLumberjack/Default (= 3.4.2)
+    - CocoaLumberjack/Extensions (= 3.4.2)
+  - CocoaLumberjack/Default (3.4.2)
+  - CocoaLumberjack/Extensions (3.4.2):
+    - CocoaLumberjack/Default
+  - CommonCryptoModule (1.0.2)
+  - Curve25519 (1.0)
+  - KissXML (5.2.3)
+  - libidn (1.35)
+  - LibSignalProtocolSwift (1.2.0):
+    - CommonCryptoModule
+    - Curve25519
+    - SwiftProtobuf
+  - SwiftProtobuf (1.0.3)
+  - XMPPFramework (4.0.0):
+    - XMPPFramework/default (= 4.0.0)
+  - XMPPFramework/default (4.0.0):
+    - CocoaAsyncSocket (~> 7.6)
+    - CocoaLumberjack
+    - KissXML (~> 5.2)
+    - libidn (~> 1.35)
+
+DEPENDENCIES:
+  - LibSignalProtocolSwift
+  - XMPPFramework
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - CocoaAsyncSocket
+    - CocoaLumberjack
+    - CommonCryptoModule
+    - Curve25519
+    - KissXML
+    - libidn
+    - LibSignalProtocolSwift
+    - SwiftProtobuf
+    - XMPPFramework
+
+SPEC CHECKSUMS:
+  CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
+  CocoaLumberjack: db7cc9e464771f12054c22ff6947c5a58d43a0fd
+  CommonCryptoModule: 63a68b57abed79655b3a01011419bf037a05b0a0
+  Curve25519: 849314b353906cffa572125f31c2d006ce635f32
+  KissXML: 09f88ff8161fd058d67b70740b8b516687b52823
+  libidn: e4576a956b797c584c77aaedfc6e3dd639b61bdc
+  LibSignalProtocolSwift: 8b38513d2e560841dc1e686a4f4f49ce21be9776
+  SwiftProtobuf: 5ccc0e4054e37c75800e5744acb2aa80bb72b39c
+  XMPPFramework: 5d31ff9f73dce031b24bc49bcf88093627a3a86e
+
+PODFILE CHECKSUM: c308a7cd26ef79d67f292dff3548fbee2450b3e8
+
+COCOAPODS: 1.5.3

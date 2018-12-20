@@ -1,0 +1,6 @@
+framework module Pods_signalTest {
+  umbrella header "Pods-signalTest-umbrella.h"
+
+  export *
+  module * { export * }
+}

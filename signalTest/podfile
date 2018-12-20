@@ -1,0 +1,8 @@
+platform:ios, '11.4'
+use_frameworks!
+target 'signalTest' do
+  pod 'LibSignalProtocolSwift'
+  pod 'XMPPFramework'
+  pod 'Sodium.framework'
+end
+
