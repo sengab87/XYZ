@@ -12,8 +12,14 @@ class NvViewController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+self.navigationBar.barTintColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
+        print("yp")
         // Do any additional setup after loading the view.
+    }
+    override func awakeFromNib() {
+        super .awakeFromNib()
+        
+        print("y1p")
     }
 
 

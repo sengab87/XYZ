@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  WindowShopper
+//  TestingXIBS
 //
-//  Created by Ahmed Sengab on 12/18/18.
+//  Created by Ahmed Sengab on 12/20/18.
 //  Copyright © 2018 Ahmed Sengab. All rights reserved.
 //
 
