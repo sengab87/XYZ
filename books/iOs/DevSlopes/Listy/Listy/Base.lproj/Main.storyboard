@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oUl-0J-cw8">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--List Table View Controller-->
+        <scene sceneID="niQ-Vc-QI9">
+            <objects>
+                <tableViewController id="oUl-0J-cw8" customClass="ListTableViewController" customModule="Listy" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Csf-8A-xDw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ParallaxCell" rowHeight="120" id="BBJ-3q-Fcx" customClass="ParallaxCell" customModule="Listy" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BBJ-3q-Fcx" id="sJ6-Jy-RbE">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="aZC-P0-1XJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAMERA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FW0-rv-tFt">
+                                            <rect key="frame" x="74.5" y="25.5" width="226.5" height="68.5"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-HeavyItalic" family="Avenir Next" pointSize="50"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="aZC-P0-1XJ" firstAttribute="top" secondItem="sJ6-Jy-RbE" secondAttribute="top" id="2DY-T2-tJa"/>
+                                        <constraint firstAttribute="bottom" secondItem="aZC-P0-1XJ" secondAttribute="bottom" id="8Iy-zN-e98"/>
+                                        <constraint firstItem="FW0-rv-tFt" firstAttribute="centerX" secondItem="sJ6-Jy-RbE" secondAttribute="centerX" id="FBp-d2-AX4"/>
+                                        <constraint firstItem="aZC-P0-1XJ" firstAttribute="leading" secondItem="sJ6-Jy-RbE" secondAttribute="leading" id="LYh-Bb-Ll1"/>
+                                        <constraint firstItem="FW0-rv-tFt" firstAttribute="centerY" secondItem="sJ6-Jy-RbE" secondAttribute="centerY" id="Rzq-cz-Evv"/>
+                                        <constraint firstAttribute="trailing" secondItem="aZC-P0-1XJ" secondAttribute="trailing" id="oz2-5k-Nnv"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="FW0-rv-tFt" id="PNL-EL-soV"/>
+                                    <outlet property="itemImageView" destination="aZC-P0-1XJ" id="alR-iK-Zw2"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="oUl-0J-cw8" id="6qW-mc-oIo"/>
+                            <outlet property="delegate" destination="oUl-0J-cw8" id="zea-rw-RnM"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BiR-sE-dCA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="172" y="12.143928035982009"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="1" width="12.052077293395996" height="8"/>
+    </resources>
+</document>

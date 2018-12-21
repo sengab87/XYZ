@@ -54,6 +54,9 @@
 		ADD353B221CC214B00C6BF35 /* XYZ */ = {
 			isa = PBXGroup;
 			children = (
+				ADD353C721CC2F1100C6BF35 /* Model */,
+				ADD353C621CC2EF900C6BF35 /* View */,
+				ADD353C521CC2EEA00C6BF35 /* Controller */,
 				ADD353B321CC214B00C6BF35 /* AppDelegate.swift */,
 				ADD353B521CC214B00C6BF35 /* ViewController.swift */,
 				ADD353B721CC214B00C6BF35 /* Main.storyboard */,
@@ -62,6 +65,27 @@
 				ADD353BF21CC214C00C6BF35 /* Info.plist */,
 			);
 			path = XYZ;
+			sourceTree = "<group>";
+		};
+		ADD353C521CC2EEA00C6BF35 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		ADD353C621CC2EF900C6BF35 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ADD353C721CC2F1100C6BF35 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
