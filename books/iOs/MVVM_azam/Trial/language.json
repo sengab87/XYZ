@@ -1,0 +1,38 @@
+languageList = [ 
+    {
+        "code" : "en-US (fixed)",
+        "language" : "English"
+    }
+    ,{
+        "code" : "ar-SA (fixed)",
+        "language" : "العَرَبِيَّة"
+    },
+    {
+        "code" : "ar-SA (fixed)",
+        "language" : "العَرَبِيَّة"
+    },
+    {
+        "code" : "de-DE (fixed)",
+        "language" : "Deutsch"
+    }
+    ,
+    {
+        "code" : "cs-CZ (fixed)",
+        "language" : "Deutsch"
+    }
+    ,
+    {
+        "code" : "de-DE (fixed)",
+        "language" : "Deutsch"
+    }
+    ,
+    {
+        "code" : "de-DE (fixed)",
+        "language" : "Deutsch"
+    }
+    ,
+    {
+        "code" : "de-DE (fixed)",
+        "language" : "čeština"
+    }
+]
