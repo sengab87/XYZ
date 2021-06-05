@@ -1,0 +1,14 @@
+target 'AbbassiApp' do
+  use_frameworks!
+     pod 'Firebase/Analytics'
+     pod 'Firebase/Database'
+     pod 'Firebase/Auth'
+     pod 'Firebase/Storage'
+     pod 'Firebase/Firestore'
+     pod 'NVActivityIndicatorView'
+     pod 'iOSDropDown'
+     pod 'SPPermissions/Notification'
+     pod 'SPPermissions/Camera'
+     pod 'PMAlertController'
+end
+

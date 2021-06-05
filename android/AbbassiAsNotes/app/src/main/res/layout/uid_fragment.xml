@@ -1,0 +1,85 @@
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="uidViewModel"
+            type="com.example.abbassiasnotes.uid.UidViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RadioGroup
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
+            android:checkedButton="@id/ebis"
+            android:onCheckedChanged="@{(RadioGroup, checkedId)->uidViewModel.RadioButtonPressed(RadioGroup, checkedId)}"
+            app:layout_constraintBottom_toTopOf="@+id/uid_text"
+            app:layout_constraintEnd_toEndOf="@+id/uid_text"
+            app:layout_constraintStart_toStartOf="@+id/uid_text"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+            <RadioButton
+                android:id="@+id/ebis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="EBIS" />
+
+            <RadioButton
+                android:id="@+id/capital"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Capital" />
+
+            <RadioButton
+                android:id="@+id/sls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SLS" />
+
+            <RadioButton
+                android:id="@+id/bsc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BSC" />
+
+            <RadioButton
+                android:id="@+id/other"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Other" />
+
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/uid_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Enter UID"
+            android:inputType="textPersonName"
+            android:text="@={uidViewModel.uidText}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/submit_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Submit"
+            android:onClick="@{()->uidViewModel.SubmitBtnPressed()}"
+            app:layout_constraintEnd_toEndOf="@+id/uid_text"
+            app:layout_constraintStart_toStartOf="@+id/uid_text"
+            app:layout_constraintTop_toBottomOf="@+id/uid_text" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

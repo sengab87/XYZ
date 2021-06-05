@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "376427361231",
+    "firebase_url": "https://abbassiasnotes-79f91-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "abbassiasnotes-79f91",
+    "storage_bucket": "abbassiasnotes-79f91.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:376427361231:android:df4781f9d4a79079f158ba",
+        "android_client_info": {
+          "package_name": "com.example.abbassiasnotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "376427361231-v4clspfj3sob2omffp5s873rhjtp45j0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDinKBkGSKKW8QXwmguk5Y7G06YVcSjqXw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "376427361231-v4clspfj3sob2omffp5s873rhjtp45j0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "376427361231-4nps96qjqqvm57f5v4s19j8ocfc4t7cf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "newSengab1.AbbassiApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

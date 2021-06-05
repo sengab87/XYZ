@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/logInFragment">
+    <fragment
+        android:id="@+id/logInFragment"
+        android:name="com.example.abbassiasnotes.logIn.LogInFragment"
+        android:label="LogInFragment"
+        tools:layout="@layout/log_in_fragment">
+        <action
+            android:id="@+id/action_logInFragment_to_uidFragment"
+            app:destination="@id/uidFragment" />
+        <action
+            android:id="@+id/action_logInFragment_to_cameraAccessFragment"
+            app:destination="@id/cameraAccessFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/uidFragment"
+        android:name="com.example.abbassiasnotes.uid.UidFragment"
+        android:label="UidFragment"
+        tools:layout="@layout/uid_fragment"
+        >
+        <action
+            android:id="@+id/action_uidFragment_to_cameraAccessFragment"
+            app:destination="@id/cameraAccessFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cameraAccessFragment"
+        android:name="com.example.abbassiasnotes.cameraAccess.CameraAccessFragment"
+        android:label="CameraAccessFragment"
+        tools:layout="@layout/camera_access_fragment">
+        <action
+            android:id="@+id/action_cameraAccessFragment_to_videoFragment"
+            app:destination="@id/videoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/videoFragment"
+        android:name="com.example.abbassiasnotes.video.VideoFragment"
+        android:label="VideoFragment"
+        tools:layout="@layout/video_fragment">
+        <argument
+            android:name="url"
+            app:argType="string" />
+    </fragment>
+</navigation>

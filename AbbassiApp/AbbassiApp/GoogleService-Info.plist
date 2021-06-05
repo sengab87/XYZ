@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>376427361231-ahvpqokda9uf9juhsv07p4dt4sv625tu.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.376427361231-ahvpqokda9uf9juhsv07p4dt4sv625tu</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC9f8Demqsg6X9SU5vTjBsO_rWx8Fu6n0s</string>
+	<key>GCM_SENDER_ID</key>
+	<string>376427361231</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>mathsaurus.sengab</string>
+	<key>PROJECT_ID</key>
+	<string>abbassiasnotes-79f91</string>
+	<key>STORAGE_BUCKET</key>
+	<string>abbassiasnotes-79f91.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:376427361231:ios:0752bc3741f4feb8f158ba</string>
+	<key>DATABASE_URL</key>
+	<string>https://abbassiasnotes-79f91-default-rtdb.europe-west1.firebasedatabase.app</string>
+</dict>
+</plist>
