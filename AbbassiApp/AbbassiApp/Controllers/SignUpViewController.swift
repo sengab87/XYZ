@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
-import FirebaseFirestore
+
 
 
 class SignUpViewController: ConnectionStatusViewController, UITextFieldDelegate {
@@ -34,7 +34,6 @@ class SignUpViewController: ConnectionStatusViewController, UITextFieldDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         let status = UserDefaults.standard.value(forKey: "account") as? String
-        print(status," LOCKING ")
         if (status != "locked"){
             EmailAddress.delegate = self
             Password.delegate = self
@@ -98,7 +97,7 @@ class SignUpViewController: ConnectionStatusViewController, UITextFieldDelegate 
             let userInfo = notification.userInfo
         let keyboardSize = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
             let keyboardHeight = keyboardSize.cgRectValue.height
-            buttonBottomConstraint.constant =  keyboardHeight - 28
+            buttonBottomConstraint.constant =  keyboardHeight + 8
     }
     private func currentlyEditedTextField(textField: UITextField){
         if (textField == Password){
@@ -145,7 +144,6 @@ class SignUpViewController: ConnectionStatusViewController, UITextFieldDelegate 
                            //// Error Creating User
                        }
                    }else{
-                       print(UIDevice.current.identifierForVendor?.uuidString)
                        //// User Available in Database
                        /// NEED TO CHECK so to segue in another part
                        ///
@@ -171,13 +169,12 @@ class SignUpViewController: ConnectionStatusViewController, UITextFieldDelegate 
                                    UIApplication.shared.windows.first?.rootViewController = navController
                                    UIApplication.shared.windows.first?.makeKeyAndVisible()
                                } else {
-                                   print(deviceId, " dev ", UIDevice.current.identifierForVendor?.uuidString)
-                                   
+                                   /// REMOVE 
                                 
+                                UserDefaults.standard.setValue("locked", forKey: "account")
                                 self.removeOverlay()
                                 
                                 
-                                   print("lock Account")
                                }
        
                            }

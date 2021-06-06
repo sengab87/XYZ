@@ -8,12 +8,12 @@
 import UIKit
 import AVKit
 import Firebase
-import FirebaseStorage
 import PMAlertController
 let token = "mAVVjEPZ0rwAAAAAAAAAAUEWuXvokB8IcTJoNa8zjdLRmqbvLb3TiizPOPMYGJde"
 
 class VideoViewController: ConnectionStatusViewController, AVPlayerViewControllerDelegate{
     var link:String!
+    var status: Bool!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
@@ -28,13 +28,13 @@ class VideoViewController: ConnectionStatusViewController, AVPlayerViewControlle
         }
         
     }
-    private func sendVideo(handler: @escaping(_ status: String?)->()){
+    private func sendVideo(path:String, handler: @escaping(_ status: String?)->()){
         
         let url = URL(string: "https://api.dropboxapi.com/2/files/get_temporary_link")!
 
         // prepare json data
  
-        let json: [String: Any] = ["path": "/RPReplay_Final1619124054.mp4"]
+        let json: [String: Any] = ["path": path]
 
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
 
@@ -49,12 +49,10 @@ class VideoViewController: ConnectionStatusViewController, AVPlayerViewControlle
 
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
-                print(error?.localizedDescription ?? "No data")
                 return
             }
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
             if let responseJSON = responseJSON as? [String: Any] {
-                print(responseJSON)
                 guard let result = responseJSON["link"] as? String
                 else {
                     handler(nil)
@@ -68,16 +66,16 @@ class VideoViewController: ConnectionStatusViewController, AVPlayerViewControlle
     }
     private func parseVideoString(link: [String]){
         /// Check  school
+        print(link," LINK ")
         let userSchool = UserDefaults.standard.object(forKey: "school")
         if (userSchool == nil){
             UsersWebServices.instance.getUserSchool { currentSchool in
                 UserDefaults.standard.setValue(currentSchool, forKey: "school")
                 let school = UserDefaults.standard.object(forKey: "school") as! String
-                print(school," SCOOL ")
                         UsersWebServices.instance.getSchoolCurrentPage(school: school, notes: link[0], page: link[1]) { status in
                             if (status){
                                 DispatchQueue.main.async {
-                                    self.showView(link: self.link)
+                                    self.showView(link: self.link,parsedLink: "/" + link[0] + "/" + link[2])
                                 }
                             }else {
                                 
@@ -88,7 +86,7 @@ class VideoViewController: ConnectionStatusViewController, AVPlayerViewControlle
             UsersWebServices.instance.getSchoolCurrentPage(school: userSchool as! String, notes: link[0], page: link[1]) { status in
                 if (status){
                     DispatchQueue.main.async {
-                        self.showView(link: self.link)
+                        self.showView(link: self.link,parsedLink: "/" + link[0]+"/"+link[2])
                     }
                 }else {
                     
@@ -105,8 +103,8 @@ class VideoViewController: ConnectionStatusViewController, AVPlayerViewControlle
         UIApplication.shared.windows.first?.makeKeyAndVisible()
         
     }
-    private func showView(link: String){
-        self.sendVideo { status in
+    private func showView(link: String, parsedLink: String){
+        self.sendVideo(path:parsedLink) { status in
             if (status != nil) {
                 DispatchQueue.main.async {
                     let player = AVPlayer(url:URL(string:status!)!)
@@ -135,7 +133,6 @@ class VideoViewController: ConnectionStatusViewController, AVPlayerViewControlle
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
         if (keyPath == "captured") {
             let isCaptured = UIScreen.main.isCaptured
-            print(isCaptured)
             if(isCaptured){
                 lockAccount()
             }

@@ -46,7 +46,7 @@ class AddNewUUIDViewController: ConnectionStatusViewController, UITextFieldDeleg
             let userInfo = notification.userInfo
         let keyboardSize = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
             let keyboardHeight = keyboardSize.cgRectValue.height
-            buttonBottomConstraint.constant =  keyboardHeight - 28
+            buttonBottomConstraint.constant =  keyboardHeight + 8
     }
     private func currentlyEditedTextField(textField: UITextField){
             UidView.backgroundColor = #colorLiteral(red: 0.3242118955, green: 0.5099019408, blue: 0.9605500102, alpha: 1)

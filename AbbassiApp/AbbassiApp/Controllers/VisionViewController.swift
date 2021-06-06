@@ -36,7 +36,6 @@ class VisionViewController: UIViewController,UIImagePickerControllerDelegate, UI
     }
     
     private func setupCameraView(){
-        print ("jordi")
         captureSession.sessionPreset = .hd1280x720
 
         // TODO: Add input
@@ -69,7 +68,6 @@ class VisionViewController: UIViewController,UIImagePickerControllerDelegate, UI
     }
     private func determineCameraStatus()
     {
-        print ("jordi2")
         switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .notDetermined:
           AVCaptureDevice.requestAccess(for: .video) { [self] granted in
@@ -86,7 +84,6 @@ class VisionViewController: UIViewController,UIImagePickerControllerDelegate, UI
     }
    
     private func showPermissionsAlert() {
-        print ("jord2")
       showAlert(
         withTitle: "Camera Permissions",
         message: "Please open Settings and grant permission for this app to use your camera.")
@@ -94,7 +91,6 @@ class VisionViewController: UIViewController,UIImagePickerControllerDelegate, UI
     
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
       // TODO: Live Vision
-        print ("jordi3")
       guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
       let imageRequestHandler = VNImageRequestHandler(
         cvPixelBuffer: pixelBuffer,
@@ -103,18 +99,14 @@ class VisionViewController: UIViewController,UIImagePickerControllerDelegate, UI
       do {
         try imageRequestHandler.perform([detectBarcodeRequest])
       } catch {
-        print(error)
       }
     }
     
     func processClassification(_ request: VNRequest) {
       // TODO: Main logic
-        print ("jordi4")
       guard let barcodes = request.results else { return }
       DispatchQueue.main.async { [self] in
         if captureSession.isRunning {
-            print(view.layer.sublayers?.count)
-//                view.layer.sublayers?.removeSubrange(1...)
 
           
 
@@ -135,17 +127,22 @@ class VisionViewController: UIViewController,UIImagePickerControllerDelegate, UI
       // TODO: Open it in Safari
       guard
         let payloadString = payload,
-        let url = URL(string: payloadString)
+        let url = URL(string: payloadString)?.absoluteString
+        
       else {
         invalidQrCode()
+        self.navigationController?.popViewController(animated: true)
         return
         
       }
-        let currentString = ["http", "https","P1NOTES","P2NOTES","M1NOTES"].contains(url.scheme?.lowercased())
-        if (currentString == false){
-            invalidQrCode()
-        }else {
+        
+        if (url.contains("P1NOTES") || url.contains("P2NOTES") || url.contains("M11NOTES") || url.contains("P1CLASSIFIED") || url.contains("P2CLASSIFIED") || url.contains("M1CLASSIFIED")){
             self.testing(payload: payloadString)
+        }else {
+            
+            invalidQrCode()
+            self.navigationController?.popViewController(animated: true)
+            
         }
     }
     private func testing(payload: String){
@@ -162,7 +159,6 @@ class VisionViewController: UIViewController,UIImagePickerControllerDelegate, UI
       }
     }
     private func configurePreviewLayer() {
-        print ("jordi55")
       let cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
       cameraPreviewLayer.videoGravity = .resizeAspectFill
       cameraPreviewLayer.connection?.videoOrientation = .portrait
@@ -172,9 +168,9 @@ class VisionViewController: UIViewController,UIImagePickerControllerDelegate, UI
     private func invalidQrCode(){
         let alertVC = PMAlertController(title: "QR Code Status", description: "Invalid QR Code", image: #imageLiteral(resourceName: "stop_image"), style: .alert)
 
-        alertVC.addAction(PMAlertAction(title: "Cancel", style: .cancel, action: { () -> Void in
-                    print("Capture action Cancel")
-                }))
+        alertVC.addAction(PMAlertAction(title: "Cancel", style: .cancel, action: {
+            alertVC.dismiss(animated: true, completion: nil)
+        }))
 
         self.present(alertVC, animated: true, completion: nil)
     }
@@ -186,6 +182,7 @@ class VisionViewController: UIViewController,UIImagePickerControllerDelegate, UI
                 if let plan = sender as? String
                 {
                     destinationVC.link = plan
+                    destinationVC.status = true
                 }
             }
         }

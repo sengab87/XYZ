@@ -625,9 +625,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="addUID" width="85.333335876464844" height="85.333335876464844"/>
-        <image name="camera" width="85.333335876464844" height="85.333335876464844"/>
-        <image name="showpassword" width="32" height="32"/>
+        <image name="addUID" width="56" height="56"/>
+        <image name="camera" width="56" height="56"/>
+        <image name="showpassword" width="16" height="16"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

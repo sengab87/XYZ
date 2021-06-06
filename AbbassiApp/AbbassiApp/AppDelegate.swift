@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
            UINavigationBar.appearance().backgroundColor = .clear
            // Set translucent. (Default value is already true, so this can be removed if desired.)
            UINavigationBar.appearance().isTranslucent = true
-           
+          
         
         
            

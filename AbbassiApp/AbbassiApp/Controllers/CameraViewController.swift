@@ -7,9 +7,9 @@
 
 import UIKit
 import Firebase
-import SPPermissions
+import AVFoundation
 
-class CameraViewController: ConnectionStatusViewController ,SPPermissionsDelegate{
+class CameraViewController: ConnectionStatusViewController{
     @IBOutlet weak var EmailLabel: UILabel!
     @IBOutlet weak var DeviceIDLabel: UILabel!
     
@@ -29,25 +29,46 @@ class CameraViewController: ConnectionStatusViewController ,SPPermissionsDelegat
     }
     
     @IBAction func cameraBtnPressed(_ sender: Any) {
-        let authStatus = SPPermissions.Permission.camera.authorized
-        if (authStatus){
-            addTranstion()
-            self.performSegue(withIdentifier: "Vision", sender: nil)
-        } else {
-            let permissions: [SPPermissions.Permission] = [.camera]
-            let controller = SPPermissions.dialog(permissions)
-            controller.delegate = self
-            controller.present(on: self)
-            let authorized = SPPermissions.Permission.camera.authorized
-            if (authorized){
-                addTranstion()
-                self.performSegue(withIdentifier: "Vision", sender: nil)
+        self.checkCameraStatus()
+    }
+    private func checkCameraStatus() {
+        let authStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
+        switch authStatus{
+            case .denied:
+                self.presentCameraSettings()
+            case .restricted:
+                self.presentCameraSettings()
+            case .authorized:
+                DispatchQueue.main.async{
+                    self.performSegue(withIdentifier: "Vision", sender: nil)
+                }
+            case .notDetermined:
+                AVCaptureDevice.requestAccess(for: .video) { success in
+                    if success {
+                        DispatchQueue.main.async{
+                            self.performSegue(withIdentifier: "Vision", sender: nil)
+                        }
+                    } else {
+                        
+                    }
+                }
+        }
+    }
+    
+    private func presentCameraSettings() {
+        let alertController = UIAlertController(title: "Camera access request",
+                                      message: "Camera access is denied",
+                                      preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .default))
+        alertController.addAction(UIAlertAction(title: "Settings", style: .cancel) { _ in
+            if let url = URL(string: UIApplication.openSettingsURLString) {
+                UIApplication.shared.open(url, options: [:], completionHandler: { _ in
+                    // Handle
+                })
             }
-            
-        }
-        func didAllowPermission(_ permission: SPPermissions.Permission) {
-            self.performSegue(withIdentifier: "Vision", sender: nil)
-        }
+        })
+
+        present(alertController, animated: true)
     }
 }
 

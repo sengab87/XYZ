@@ -114,7 +114,7 @@ class UUIDViewController:  ConnectionStatusViewController, UITextFieldDelegate {
             let userInfo = notification.userInfo
         let keyboardSize = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
             let keyboardHeight = keyboardSize.cgRectValue.height
-            buttonBottomConstraint.constant =  keyboardHeight - 28
+            buttonBottomConstraint.constant =  keyboardHeight + 8
     }
     private func validateInput(schoolName: String, uid: String) -> (Bool,Bool){
         let schoolStatus = schoolName.contains(" ") || schoolName.isEmpty

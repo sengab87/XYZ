@@ -23,7 +23,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let sign = UserDefaults.standard.value(forKey: "sign") as? Bool
         let uid = UserDefaults.standard.value(forKey: "UID") as? String
         let lockStatus = UserDefaults.standard.value(forKey: "account") as? String
-        print(lockStatus," LOCKOP ")
         if (lockStatus == "locked")
         {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -59,7 +58,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
                     }
                 }else {
-                    print(uid," OPSD")
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let viewController = storyboard.instantiateViewController(identifier: "UUID") as! UUIDViewController
                     let navController = storyboard.instantiateViewController(identifier: "UUIDNav") as! UINavigationController

@@ -87,7 +87,6 @@ class UsersWebServices{
         })
         { (object, error) in
             if let error = error {
-                print(error," EROR")
                 handler(false)
             } else {
                handler(true)
@@ -127,7 +126,6 @@ class UsersWebServices{
     }
     func getUserSchool(handler:@escaping(_ status:String?)->()){
         db.collection("users").document(Auth.auth().currentUser!.uid).getDocument { docSnap, error in
-            print(docSnap?.data()?["School"], "POP" ,error, "popo")
             if (error == nil){
                 guard let school = docSnap?.data()?["School"] as? String
                 else{ return }
@@ -174,7 +172,6 @@ class UsersWebServices{
                     return nil
                 }){ (object, error) in
                     if let error = error {
-                        print(error," EROR")
                         handler(false)
                     } else {
                        handler(true)

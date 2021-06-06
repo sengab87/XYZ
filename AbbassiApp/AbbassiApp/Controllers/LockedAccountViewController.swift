@@ -19,7 +19,7 @@ class LockedAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("PLANETF!")
+
         UserDefaults.standard.setValue("locked", forKey: "account")
         let alertVC = PMAlertController(title: "Account Status", description: "Your Account Has Been locked due to violating terms and Conditions", image: #imageLiteral(resourceName: "stop_image"), style: .alert)
         

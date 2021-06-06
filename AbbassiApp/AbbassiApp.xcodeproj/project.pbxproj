@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8AAAACC098D162A767099818 /* Pods_AbbassiApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BB19BAE86C0E60092E2D45F /* Pods_AbbassiApp.framework */; };
+		AD0536FF26696E3F0077AC9D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD0536FE26696E3F0077AC9D /* GoogleService-Info.plist */; };
 		AD3B37BA265D92650061A64F /* ConnectionStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3B37B9265D92650061A64F /* ConnectionStatusViewController.swift */; };
 		AD3C8566262A43B8001C5E3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3C8565262A43B8001C5E3A /* AppDelegate.swift */; };
 		AD3C8568262A43B8001C5E3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3C8567262A43B8001C5E3A /* SceneDelegate.swift */; };
@@ -18,7 +19,6 @@
 		AD3C8588262A43B9001C5E3A /* AbbassiAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3C8587262A43B9001C5E3A /* AbbassiAppUITests.swift */; };
 		AD5C331C2645F8B700942EB6 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5C331B2645F8B700942EB6 /* Users.swift */; };
 		AD5C33212645F8CA00942EB6 /* UsersWebservices.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5C33202645F8CA00942EB6 /* UsersWebservices.swift */; };
-		AD5C335F26460A4E00942EB6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD5C335E26460A4E00942EB6 /* GoogleService-Info.plist */; };
 		AD62E72B265DE9B60002855A /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD62E72A265DE9B60002855A /* Reachability.swift */; };
 		AD84B311265FC32C0020B192 /* AddNewUUIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84B310265FC32C0020B192 /* AddNewUUIDViewController.swift */; };
 		AD84B3132660361F0020B192 /* LockedAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84B3122660361F0020B192 /* LockedAccountViewController.swift */; };
@@ -51,6 +51,7 @@
 /* Begin PBXFileReference section */
 		3BB19BAE86C0E60092E2D45F /* Pods_AbbassiApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AbbassiApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46A0BECC018F2E695F19B797 /* Pods-AbbassiApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbbassiApp.release.xcconfig"; path = "Target Support Files/Pods-AbbassiApp/Pods-AbbassiApp.release.xcconfig"; sourceTree = "<group>"; };
+		AD0536FE26696E3F0077AC9D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AD3B37B9265D92650061A64F /* ConnectionStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStatusViewController.swift; sourceTree = "<group>"; };
 		AD3C8562262A43B8001C5E3A /* AbbassiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AbbassiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD3C8565262A43B8001C5E3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,7 +68,6 @@
 		AD3C8589262A43B9001C5E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD5C331B2645F8B700942EB6 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		AD5C33202645F8CA00942EB6 /* UsersWebservices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersWebservices.swift; sourceTree = "<group>"; };
-		AD5C335E26460A4E00942EB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AD62E72A265DE9B60002855A /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		AD84B310265FC32C0020B192 /* AddNewUUIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewUUIDViewController.swift; sourceTree = "<group>"; };
 		AD84B3122660361F0020B192 /* LockedAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockedAccountViewController.swift; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 		AD3C8564262A43B8001C5E3A /* AbbassiApp */ = {
 			isa = PBXGroup;
 			children = (
-				AD5C335E26460A4E00942EB6 /* GoogleService-Info.plist */,
+				AD0536FE26696E3F0077AC9D /* GoogleService-Info.plist */,
 				AD3B37BE265D9D250061A64F /* Views */,
 				ADF437AE2645F8300027B745 /* Models */,
 				ADF437A52645F80D0027B745 /* Services */,
@@ -330,9 +330,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD3C8572262A43B9001C5E3A /* LaunchScreen.storyboard in Resources */,
-				AD5C335F26460A4E00942EB6 /* GoogleService-Info.plist in Resources */,
 				AD3C856F262A43B9001C5E3A /* Assets.xcassets in Resources */,
 				AD3C856D262A43B8001C5E3A /* Main.storyboard in Resources */,
+				AD0536FF26696E3F0077AC9D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,7 +502,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -599,7 +599,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = newSengab1.AbbassiApp;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = mathsaurus.sengab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -622,7 +623,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = newSengab1.AbbassiApp;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = mathsaurus.sengab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

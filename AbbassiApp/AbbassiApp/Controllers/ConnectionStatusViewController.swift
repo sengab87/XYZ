@@ -42,7 +42,6 @@ class ConnectionStatusViewController: UIViewController {
                     }
                 }
                 if (path.usesInterfaceType(.cellular)){
-                    print("cellular")
                     DispatchQueue.main.async {
                         UIView.animate(withDuration: 1.5) {
                             self.internetView.alpha = 0
